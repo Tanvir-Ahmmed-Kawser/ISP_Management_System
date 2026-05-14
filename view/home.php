@@ -6,6 +6,7 @@ require_once("../models/db.php");
 
 ?>
 
+<h1>Welcome to FTP Server System</h1>
 <h2>Categories</h2>
 
 <?php
