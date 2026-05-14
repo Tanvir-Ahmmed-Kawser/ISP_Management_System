@@ -7,17 +7,29 @@ $result = mysqli_query($conn, "SELECT * FROM contents");
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contents</title>
+    <title>Member Contents</title>
+
+    <!-- (OPTIONAL) asset CSS add করলে better look হবে -->
+    <link rel="stylesheet" href="../asset/style.css">
+
 </head>
 <body>
 
-<h2>Contents List</h2>
+<h2>Contents List (Member Panel)</h2>
 
+<!-- NAVIGATION (IMPORTANT ADDITION) -->
+<a href="member.php">Home</a> |
+<a href="request_form.php">Request Content</a>
+
+<br><br>
+
+<!-- SEARCH BOX -->
 <input type="text" id="search" placeholder="Search here...">
 <button onclick="searchData()">Search</button>
 
 <br><br>
 
+<!-- RESULT AREA -->
 <div id="result">
 
 <table border="1" cellpadding="10">
@@ -48,6 +60,7 @@ $result = mysqli_query($conn, "SELECT * FROM contents");
 
 <br><br>
 
+<!-- SEARCH SCRIPT -->
 <script>
 
 function searchData(){
