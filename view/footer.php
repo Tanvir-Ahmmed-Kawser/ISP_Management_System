@@ -70,19 +70,17 @@
     <div class="footerContent">
 
         <div class="footerLogo">
-            <h2>🌐ISP Management System</h2>
+            <h2>🌐 ISP FTP Media Server</h2>
             <p>Simple • Fast • Reliable</p>
         </div>
 
         <div class="footerLinks">
-            <a href="#">Home</a>
             <a href="#">About</a>
-            <a href="#">Services</a>
             <a href="#">Contact</a>
         </div>
 
         <div class="footerCopy">
-            <p>© 2026 All Rights Reserved</p>
+            <p>© 2026 ISP FTP Media Server</p>
             <p>Version: 1.1.0</p>
         </div>
     </div>
