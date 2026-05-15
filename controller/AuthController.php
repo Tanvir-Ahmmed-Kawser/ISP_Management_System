@@ -57,7 +57,7 @@ if(isset($_POST['register'])){
             );
 
             if($stmt->execute()){
-                header("Location: ../view/adminDashboard.php");
+                header("Location: ../view/admin/adminDashboard.php");
             }
         }
     }
@@ -87,7 +87,7 @@ if(isset($_POST['login'])){
             $user['password_hash']
         )){
 
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['id'] = $user['id'];
 
             $_SESSION['name'] = $user['name'];
 
