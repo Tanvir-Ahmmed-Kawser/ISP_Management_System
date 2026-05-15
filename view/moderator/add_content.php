@@ -58,10 +58,13 @@
 
 <tr>
 <td colspan="2">
-<button type="button" onclick="uploadCheck()">Upload</button>
- <a href="dashboard.php" class="back-btn">
-            Back
-        </a>
+<button type="button" onclick="uploadCheck()" class="action-btn">
+    Upload
+</button>
+
+<a href="dashboard.php" class="action-btn back-btn">
+    Back
+</a>
 </td>
 </tr>
 
