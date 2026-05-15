@@ -1,3 +1,10 @@
+<?php
+session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
 <style>
 body{
     margin:0;

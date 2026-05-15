@@ -18,7 +18,6 @@ $result = mysqli_query($conn, "SELECT * FROM contents");
 <h2>Contents List (Member Panel)</h2>
 
 <!-- NAVIGATION (IMPORTANT ADDITION) -->
-<a href="member.php">Home</a> |
 <a href="request_form.php">Request Content</a>
 
 <br><br>

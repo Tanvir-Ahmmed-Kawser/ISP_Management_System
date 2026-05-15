@@ -1,6 +1,10 @@
-
-
-
+<?php
+    session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,28 +111,15 @@
                         <th>Uploaded At</th>
                     </tr>
                     <tr>
-                        <td>
-
-                        </td>
-                        <td>
-        
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
+                        <td colspan="5">
+                            This feature is comming soon.... Click on View All. Thank you!
                         </td>
                     </tr>
                 </table>
             </div>
         </div>
-    </div>    
+    </div>   
+    <script src="../../asset/JS/admin.js"></script> 
 </body>
 </html>
-
-
 <?php include_once '../footer.php'; ?>
