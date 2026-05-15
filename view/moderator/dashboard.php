@@ -118,7 +118,7 @@ body{
 
 
         <div class="card">
-            <a href="view_contents.php">
+            <a href="all_content.php">
             <h3>🎛 View All</h3>
             <p>Contents</p>
         </div>

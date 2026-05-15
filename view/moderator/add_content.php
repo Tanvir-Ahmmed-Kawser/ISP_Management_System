@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Add Content</title>
-    <link rel="stylesheet" href="../../asset/CSS/manage.css">
+    <link rel="stylesheet" href="../../asset/CSS/moderator.css">
 </head>
 
 <body>
