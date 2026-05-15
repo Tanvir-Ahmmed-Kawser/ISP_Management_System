@@ -45,7 +45,9 @@
 .footerLinks a:hover{
     color: #38bdf8;
 }
-
+p{
+    text-align: center;
+}
 .footerCopy p{
     font-size: 14px;
     color: #cbd5e1;

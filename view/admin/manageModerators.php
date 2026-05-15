@@ -1,3 +1,13 @@
+<?php
+session_start();
+    require_once '../../models/database.php';
+    require_once '../../models/user.php';
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+    $users = getAllModerators();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,28 +37,40 @@
                         <th>Profile Picture</th>
                         <th>Action</th>
                     </tr>
-                    <tr>
-                        <td>
-
-                        </td>                
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-                            <a href="#">View</a>
-                            <a href="#">Edit</a>
-                            <a href="#">Delete</a>
-                        </td>
-                    </tr>
+                    <?php if(count($users) > 0){ ?>
+                        <?php foreach($users as $user){ ?>            
+                        <tr>
+                            <td>
+                                <?php echo $user['id']; ?>
+                            </td>              
+                            <td>
+                                <?php echo $user['name']; ?>
+                            </td>
+                            <td>
+                                <?php echo $user['email']; ?>
+                            </td>
+                            <td>
+                                <?php echo $user['role']; ?>
+                            </td>
+                            <td>
+                                No image.
+                            </td>
+                            <td>
+                                <a href="#">View</a>
+                                <a href="#">Edit</a>
+                                <a href="../../controller/adminController/userController.php?delete_id=<?php echo $user['id']; ?>">
+                                   Delete
+                                </a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    <?php }else{ ?>
+                        <tr>
+                            <td colspan="6" align="center">
+                                No Moderator Found
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </table>
             </div>            
         </div>

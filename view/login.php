@@ -1,4 +1,6 @@
-<?php include("partials/header.php"); ?>
+<?php include("header.php"); 
+session_start();
+?>
 
 <h2>Login</h2>
 
@@ -22,4 +24,4 @@ Login
 
 </form>
 
-<?php include("partials/footer.php"); ?>
+<?php include("footer.php"); ?>

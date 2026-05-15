@@ -57,8 +57,7 @@ if(isset($_POST['register'])){
             );
 
             if($stmt->execute()){
-
-                header("Location: ../view/login.php");
+                header("Location: ../view/adminDashboard.php");
             }
         }
     }
@@ -94,7 +93,19 @@ if(isset($_POST['login'])){
 
             $_SESSION['role'] = $user['role'];
 
-            header("Location: ../view/home.php");
+            if($user['role'] === 'admin'){                
+                $_SESSION['status'] =true;
+                $_SESSION['id'] = $user['id'];
+                header("Location: ../view/admin/adminDashboard.php");
+                exit;
+            }
+
+            else if($user['role'] === 'moderator'){                
+                $_SESSION['status'] =true;
+                $_SESSION['id'] = $user['id'];
+                header("Location: ../view/moderator/dashboard.php");
+                exit;
+            }
         }
 
         else{
@@ -103,7 +114,7 @@ if(isset($_POST['login'])){
     }
 
     else{
-        echo "User Not Found";
+        echo "Invalid email or password";
     }
 }
 

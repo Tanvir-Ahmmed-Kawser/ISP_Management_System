@@ -42,6 +42,9 @@ td{
     align-items: center;
     text-align: center;
 }
+.dataIndex{
+    font-size: 25px;
+}
 input,
 textarea,
 select{

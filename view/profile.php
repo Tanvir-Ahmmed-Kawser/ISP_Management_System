@@ -1,12 +1,15 @@
 <?php
+session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
+<?php
 
-include("partials/header.php");
+include("header.php");
 
 require_once("../models/db.php");
-
-if(!isset($_SESSION['user_id'])){
-    header("Location: login.php");
-}
 
 $id = $_SESSION['user_id'];
 
@@ -41,4 +44,4 @@ Update
 
 </form>
 
-<?php include("partials/footer.php"); ?>
+<?php include("footer.php"); ?>

@@ -1,6 +1,6 @@
 <?php
 
-include("partials/header.php");
+require_once 'header.php';
 
 require_once("../models/db.php");
 
@@ -37,6 +37,8 @@ while($row = $result->fetch_assoc()){
 
 <?php
 }
+
+require_once 'Member.php';
 ?>
 
-<?php include("partials/footer.php"); ?>
+<?php include_once 'footer.php'; ?>

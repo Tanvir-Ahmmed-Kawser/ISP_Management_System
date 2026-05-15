@@ -1,3 +1,11 @@
+<?php
+session_start();
+require_once '../../models/database.php';
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,9 +13,7 @@
     <link rel="stylesheet" href="../../asset/CSS/moderator.css">
 </head>
 <body>
-<div class="dashboard">
-    
-
+<div class="dashboard"> 
     <div class="container">
         <h1>All Uploaded Contents</h1>
 

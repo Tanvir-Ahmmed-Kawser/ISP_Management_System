@@ -1,4 +1,10 @@
-<?php include("partials/header.php"); ?>
+<?php include_once("header.php"); 
+session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
 
 <h2>Register</h2>
 
@@ -49,4 +55,4 @@ Register
 
 <script src="../asset/js/validation.js"></script>
 
-<?php include("partials/footer.php"); ?>
+<?php include_once("footer.php"); ?>
