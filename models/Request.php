@@ -1,28 +1,20 @@
 <?php
-
 include('db.php');
 
-function addRequest($title, $category, $message){
+function addRequest($title,$category,$message,$ip){
 
-    global $conn;
+    $con = getConnection();
 
     $status = "pending";
 
-    $stmt = mysqli_prepare($conn,
+    $stmt = mysqli_prepare($con,
     "INSERT INTO content_requests
-    (content_title, category_requested, message, status)
-    VALUES(?,?,?,?)");
+    (content_title,category_requested,message,requester_ip,status)
+    VALUES(?,?,?,?,?)");
 
-    mysqli_stmt_bind_param(
-        $stmt,
-        "ssss",
-        $title,
-        $category,
-        $message,
-        $status
-    );
+    mysqli_stmt_bind_param($stmt,"sssss",
+    $title,$category,$message,$ip,$status);
 
     return mysqli_stmt_execute($stmt);
 }
-
 ?>

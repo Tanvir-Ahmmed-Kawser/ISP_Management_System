@@ -1,9 +1,22 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","isp_management");
+$host = "127.0.0.1";
+$dbuser = "root";
+$dbpassword = "";
+$dbname = "projectdb";
 
-if(!$conn){
-    die("DB Failed");
+function getConnection(){
+    global $host;
+    global $dbuser;
+
+    $con = mysqli_connect(
+        $host,
+        $dbuser,
+        $GLOBALS['dbpassword'],
+        $GLOBALS['dbname']
+    );
+
+    return $con;
 }
 
 ?>

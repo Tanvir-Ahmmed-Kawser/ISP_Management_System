@@ -1,5 +1,5 @@
 <?php
-include('../../models/Request.php');
+include('../models/Request.php');
 
 $title=$_POST['title'];
 $category=$_POST['category'];
@@ -8,5 +8,5 @@ $ip=$_POST['ip'];
 
 addRequest($title,$category,$message,$ip);
 
-echo "Success";
+header("location: ../views/request.php");
 ?>
