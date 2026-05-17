@@ -86,6 +86,14 @@ body{
     margin:5px;
 }
 </style>
+<?php
+
+session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
 
 <div class="dashboard">
 

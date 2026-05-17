@@ -1,6 +1,6 @@
 <?php
-require_once(__DIR__ . '/database.php');
 
+require_once(__DIR__ . '/database.php');
 function addContent($title, $desc, $file, $cat, $user) {
     $conn = getConnection();
 

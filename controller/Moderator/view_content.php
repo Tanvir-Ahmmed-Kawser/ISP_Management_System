@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../../view/login.php');
+    }
 require_once(__DIR__ . '/../../models/ContentModel.php');
 
 $search = isset($_GET['search']) ? $_GET['search'] : '';
