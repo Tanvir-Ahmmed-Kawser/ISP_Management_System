@@ -102,33 +102,37 @@ body{
     <div class="container">
 
 
- <div class="card">
+        <div class="card">
             <a href="add_content.php">
-            <h3>⬆Upload</h3>
-            <p>New Content</p>
+                <h3>⬆Upload</h3>
+                <p>New Content</p>
+            </a>
         </div>
 
 
-<div class="card">
-            <a href="delete_content.php">
-            <h3>🗑 Delete</h3>
-            <p>Content</p>
+        <div class="card">
+            <a href="delet_content.php">
+                <h3>🗑 Delete</h3>
+                <p>Content</p>
+            </a>
         </div>
 
 
 
         <div class="card">
             <a href="all_content.php">
-            <h3>🎛 View All</h3>
-            <p>Contents</p>
+                <h3>🎛 View All</h3>
+                <p>Contents</p>
+            </a>
         </div>
 
         
 
         <div class="card">
             <a href="request.php">
-            <h3>📬 Requests</h3>
-            <p>Manage</p>
+                <h3>📬 Requests</h3>
+                <p>Manage</p>
+            </a>
         </div>
 
 

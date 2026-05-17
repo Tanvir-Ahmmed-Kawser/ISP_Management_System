@@ -83,6 +83,38 @@ function getAllContents($search = '', $category = '') {
     return $data;
 }
 
+function getContentById($id) {
+    $conn = getConnection();
+    $id = mysqli_real_escape_string($conn, $id);
+    $result = mysqli_query($conn, "SELECT * FROM contents WHERE id='$id'");
+    return mysqli_fetch_assoc($result);
+}
+
+function incrementDownloadCount($id) {
+    $conn = getConnection();
+    $id = mysqli_real_escape_string($conn, $id);
+    return mysqli_query($conn, "UPDATE contents SET download_count = download_count + 1 WHERE id='$id'");
+}
+//new function to increment upload count for a user
+function incrementUserUploadCount($user_id) {
+    $conn = getConnection();
+    $user_id = mysqli_real_escape_string($conn, $user_id);
+
+    // If there is no `users` table, nothing to do.
+    $tbl = mysqli_query($conn, "SHOW TABLES LIKE 'users'");
+    if (!$tbl || mysqli_num_rows($tbl) == 0) {
+        return false;
+    }
+
+    // Ensure the column exists; add it if missing.
+    $col = mysqli_query($conn, "SHOW COLUMNS FROM users LIKE 'upload_count'");
+    if ($col && mysqli_num_rows($col) == 0) {
+        mysqli_query($conn, "ALTER TABLE users ADD COLUMN upload_count INT NOT NULL DEFAULT 0");
+    }
+
+    return mysqli_query($conn, "UPDATE users SET upload_count = upload_count + 1 WHERE id='$user_id'");
+}
+
 /* DELETE CONTENT */
 function deleteContent($id) {
     $conn = getConnection();

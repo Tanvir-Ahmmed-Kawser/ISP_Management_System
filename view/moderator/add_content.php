@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Add Content</title>
-    <link rel="stylesheet" href="../../asset/CSS/moderator.css">
+    <link rel="stylesheet" href="../../asset/CSS/style.css">
 </head>
 
 <body>
@@ -43,10 +43,13 @@
 <td>Category</td>
 <td>
 <select name="category_id">
-<option value="">Select</option>
-<option value="1">Movies</option>
-<option value="2">Software</option>
-<option value="3">Games</option>
+    <option value="">Select</option>
+ <option value="1">Movies</option>
+            <option value="2">Software</option>
+            <option value="3">TV Series</option>
+            <option value="4">Games</option>
+            <option value="5">Music</option>
+            <option value="6">E-Books</option>
 </select>
 </td>
 </tr>

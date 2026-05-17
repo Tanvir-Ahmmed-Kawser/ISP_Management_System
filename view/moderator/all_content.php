@@ -37,23 +37,27 @@ if (session_status() === PHP_SESSION_NONE) {
     <table>
         <tr>
             <th>Title</th>
-            <th>Category</th>
-            <th>Uploader</th>
-            <th>Downloads</th>
+            <th>Discription</th>
+            <th>Catagory</th>
+            <th>File</th>
+           
         </tr>
 
         <?php if (!empty($contents)) { ?>
             <?php foreach ($contents as $row) { ?>
                 <tr>
                     <td><?php echo $row['title']; ?></td>
+                    <td><?php echo $row['description']; ?></td>
                     <td><?php echo $row['category_name']; ?></td>
-                    <td><?php echo $row['uploader_name']; ?></td>
-                    <td><?php echo $row['download_count']; ?></td>
+                    <td><a href="../../uploads/<?php echo $row['file_path']; ?>" target="_blank">View File</a></td>
+                   
+                       
+                    </td>
                 </tr>
             <?php } ?>
         <?php } else { ?>
             <tr>
-                <td colspan="4">No content found.</td>
+                <td colspan="5">No content found.</td>
             </tr>
         <?php } ?>
     </table>
