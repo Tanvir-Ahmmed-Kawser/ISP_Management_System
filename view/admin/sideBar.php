@@ -57,7 +57,7 @@
         </li>
         <li id="viewRequest">
             <span>📬</span>
-            <a href="../moderator/request.php">View Request</a>
+            <a href="#">View Request</a>
         </li>
         <li id="logOut">
             <span>⛔</span>

@@ -11,7 +11,7 @@ include("header.php");
 
 require_once("../models/db.php");
 
-$id = $_SESSION['user_id'];
+$id = $_SESSION['id'];
 
 $stmt = $conn->prepare(
 "SELECT * FROM users WHERE id=?"

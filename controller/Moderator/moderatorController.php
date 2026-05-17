@@ -27,8 +27,13 @@ $title = $_POST['title'];
 $description = $_POST['description'];
 $category_id = $_POST['category_id'];
 
+<<<<<<< HEAD
+// no login required
+$user_id = $_SESSION['id'];
+=======
 // use logged-in user if available
 $user_id = isset($_SESSION['user_id']) ? intval($_SESSION['user_id']) : 0;
+>>>>>>> a9702cb9783dc80f540a968b875003dc785a393b
 
 // STEP 4: file upload
 $file = $_FILES['content_file'];
@@ -36,7 +41,7 @@ $file = $_FILES['content_file'];
 $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
 $new_name = time() . '_' . rand(1000,9999) . '.' . $ext;
 
-$upload_path = __DIR__ . '/../../uploads/' . $new_name;
+$upload_path = __DIR__ . '/../../asset/Public/Contents' . $new_name;
 
 if (!move_uploaded_file($file['tmp_name'], $upload_path)) {
     $_SESSION['error'] = "File upload failed";

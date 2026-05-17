@@ -4,20 +4,21 @@
         header('location: ../view/login.php');
     }
     require_once('database.php');
-
     function getAllCategory(){
-
         $con = getConnection();
-
         $sql = "select * from categories";
-
         $result = mysqli_query($con, $sql);
-
         $categories = [];
-
         while($row = mysqli_fetch_assoc($result)){
             array_push($categories, $row);
         }
         return $categories;
     }
+    function getTotalCategories(){
+    $con = getConnection();
+    $sql = "select count(*) as total from categories";
+    $result = mysqli_query($con, $sql);
+    $data = mysqli_fetch_assoc($result);
+    return $data['total'];
+}
 ?>

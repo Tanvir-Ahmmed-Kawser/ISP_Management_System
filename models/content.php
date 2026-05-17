@@ -1,14 +1,12 @@
 <?php
     if(!isset($_SESSION['status'])){
         echo "Invalid request. Please login again";
-        header('location: ../login.php');
+        header('location: ../../view/login.php');
     }
     require_once('database.php');
 
     function addContent($content){
-
         $con = getConnection();
-
         $sql = "insert into contents values(
                     null,
                     '{$content['title']}',
@@ -28,20 +26,15 @@
     }
     function getAllContent(){
          $con = getConnection();
-
         $sql = "select contents.id, contents.title, categories.name as category,
                 users.name as uploader, contents.file_path from contents
                 join categories on contents.category_id = categories.id
                 join users on contents.uploader_id = users.id";
-
         $result = mysqli_query($con, $sql);
-
         $contents = [];
-
         while($row = mysqli_fetch_assoc($result)){
             array_push($contents, $row);
         }
-
         return $contents;
     }
 
@@ -62,6 +55,41 @@
         }
     }
     function updateContent($content){
+    $con = getConnection();
+    $sql = "UPDATE contents SET
+                title = '{$content['title']}',
+                description = '{$content['description']}',
+                file_path = '{$content['file_path']}',
+                category_id = '{$content['category_id']}',
+                uploader_id = '{$content['uploader_id']}',
+                download_count = '{$content['download_count']}'
+            WHERE id = {$content['id']}";
 
+        if(mysqli_query($con, $sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function getTotalContents(){
+        $con = getConnection();
+        $sql = "select count(*) as total from contents";
+        $result = mysqli_query($con, $sql);
+        $data = mysqli_fetch_assoc($result);
+        return $data['total'];
+    }
+    function getContentById($id){
+        $conn = getConnection();
+        $sql = "SELECT * FROM contents WHERE id='{$id}'";
+        $result = mysqli_query($conn, $sql);
+        return mysqli_fetch_assoc($result);
+    }
+
+    function getTotalRequests(){
+        $con = getConnection();
+        $sql = "select count(*) as total from content_requests where status='pending'";
+        $result = mysqli_query($con, $sql);
+        $data = mysqli_fetch_assoc($result);
+        return $data['total'];
     }
 ?>

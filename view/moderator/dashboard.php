@@ -93,10 +93,12 @@ body{
     <div class="sidebar">
 
         <h2 class="heading"> Working AS A Moderator</h2>
-        
-        
+            <div>
+        <a href="../../controller/logout.php"> Log out </a>
+    </div>      
 
     </div>
+
 
     <!-- CONTENT BOX AREA -->
     <div class="container">

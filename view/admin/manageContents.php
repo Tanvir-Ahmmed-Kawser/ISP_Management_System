@@ -57,8 +57,8 @@
                                     <?php echo $content['file_path']; ?>
                                 </td>
                                 <td>
-                                    <a href="managementUi.php">View</a>
-                                    <a href="managementUi.php">Edit</a>
+                                    <a href="#">View</a>
+                                    <a href="managementUi.php?edit_id=<?php echo $content['id']; ?>">Edit</a>
                                     <a href="../../controller/adminController/contentController.php?delete_id=<?php echo $content['id']; ?>">
                                         Delete
                                     </a>

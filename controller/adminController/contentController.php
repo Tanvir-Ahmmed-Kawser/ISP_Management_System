@@ -22,16 +22,16 @@
 
         $des ='';
 
-        if($_POST['category'] == 'games'){
+        if($category == 'games'){
             $des = '../../asset/Public/Contents/games'.$newName;
         }
-        elseif($_POST['category'] == 'movies'){
+        elseif($category == 'movies'){
             $des = '../../asset/Public/Contents/movies'.$newName;
         }
-        elseif($_POST['category'] == 'software'){
+        elseif($category == 'software'){
             $des = '../../asset/Public/Contents/software'.$newName;
         }
-        elseif($_POST['category'] == 'tv-series'){
+        elseif($category == 'tv-series'){
             $des = '../../asset/Public/Contents/tv-series'.$newName;
         }
         else{
@@ -66,7 +66,41 @@
             }
         }
 
-    }else{
+    }
+    if(isset($_POST['update'])){
+        $id = $_POST['id'];
+        $title = $_POST['title'];
+        $description = $_POST['description'];
+        $category = $_POST['category'];
+        $oldContent = getContentById($id);
+        $file_path = $oldContent['file_path'];
+        if($_FILES['file']['name'] != ""){
+            $src = $_FILES['file']['tmp_name'];
+            $ext = explode('.', $_FILES['file']['name']);
+            $count = count($ext);
+            $newName = time().".".$ext[$count-1];
+            $des = '../../asset/Public/Contents/'.$newName;
+            move_uploaded_file($src, $des);
+            $file_path = $newName;
+        }
+        $content = [
+            'id'=>$id,
+            'title'=>$title,
+            'description'=>$description,
+            'file_path'=>$file_path,
+            'category_id'=>$category,
+            'uploader_id'=>$oldContent['uploader_id'],
+            'download_count'=>$oldContent['download_count']
+        ];
+        $status = updateContent($content);
+        if($status){
+            header('location: ../../view/admin/manageContents.php');
+         }
+         else{
+            echo "Update failed!";
+         }
+    }
+    else{
         echo "invalid request! please submit form...";
     }
     if(isset($_GET['delete_id'])){
