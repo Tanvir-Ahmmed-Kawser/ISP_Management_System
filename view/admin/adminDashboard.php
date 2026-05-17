@@ -1,6 +1,10 @@
-
-
-
+<?php
+    session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,16 +15,21 @@
 </head>
 <body>
     <div class="dashboard">
-        <?php include_once 'sideBar.php'; ?>    
+        <?php require_once 'sideBar.php'; ?> 
 
         <div class="mainContent">
             <div class="welcomeBox">
-                <h1>
-                    Welcome, Admin!
-                </h1>
-                <p>
-                    Manage moderator, contents and monitor system statics from this dashboard.
-                </p>
+                <div>
+                    <h1>
+                        Welcome, Admin!
+                    </h1>
+                    <p>
+                        Manage moderator, contents and monitor system statics from this dashboard.
+                    </p>
+                </div>
+                <div>
+                    <input type="button" value="👤 Profile" id="viewProfile" name="viewProfile">
+                </div>
             </div>
             <div class="sateContainer">
                 <div class="stateBox">
@@ -88,46 +97,29 @@
                 </div>
             </div>
         
-        <div class="table">
-            <div class="tableHeader">
-            <h2>Recently Added Content</h2>
-            <input type="button" name="viewAll" id="btnViewAll" value="View All">        
+            <div class="table">
+                <div class="tableHeader">
+                <h2>Recently Added Content</h2>
+                <input type="button" name="viewAll" id="btnViewAll" value="View All">        
+                </div>
+                <table border="1">
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Uploader</th>
+                        <th>Downloads</th>
+                        <th>Uploaded At</th>
+                    </tr>
+                    <tr>
+                        <td colspan="5">
+                            This feature is comming soon.... Click on View All. Thank you!
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <table>
-            <thead>
-                <tr>
-                <th>Title</th>
-                <th>Category</th>
-                <th>Uploader</th>
-                <th>Downloads</th>
-                <th>Uploaded</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-                <td>
-
-                </td>
-                </tr>
-            </tbody>
-            </table>
         </div>
-        </div>
-    </div>    
+    </div>   
+    <script src="../../asset/JS/admin.js"></script> 
 </body>
 </html>
-
-
 <?php include_once '../footer.php'; ?>

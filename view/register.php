@@ -1,0 +1,58 @@
+<?php include_once("header.php"); 
+session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
+
+<h2>Register</h2>
+
+<form method="POST"
+action="../controller/AuthController.php"
+onsubmit="return validateRegister()">
+
+<input type="text"
+name="name"
+placeholder="Enter Name"
+required>
+
+<input type="email"
+name="email"
+placeholder="Enter Email"
+required>
+
+<input type="password"
+id="password"
+name="password"
+placeholder="Enter Password"
+required>
+
+<input type="password"
+id="confirm_password"
+name="confirm_password"
+placeholder="Confirm Password"
+required>
+
+<select name="role">
+
+<option value="admin">Admin</option>
+
+<option value="moderator">
+Moderator
+</option>
+
+</select>
+
+<button type="submit"
+name="register">
+
+Register
+
+</button>
+
+</form>
+
+<script src="../asset/js/validation.js"></script>
+
+<?php include_once("footer.php"); ?>
