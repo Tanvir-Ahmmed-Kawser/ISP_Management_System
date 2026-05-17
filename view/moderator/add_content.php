@@ -1,15 +1,10 @@
-<?php session_start();
-    if(!isset($_SESSION['status'])){
-        echo "Invalid request. Please login again";
-        header('location: ../login.php');
-    }
-?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Add Content</title>
-    <link rel="stylesheet" href="../../asset/CSS/manage.css">
+    <link rel="stylesheet" href="../../asset/CSS/style.css">
 </head>
 
 <body>
@@ -48,10 +43,13 @@
 <td>Category</td>
 <td>
 <select name="category_id">
-<option value="">Select</option>
-<option value="1">Movies</option>
-<option value="2">Software</option>
-<option value="3">Games</option>
+    <option value="">Select</option>
+ <option value="1">Movies</option>
+            <option value="2">Software</option>
+            <option value="3">TV Series</option>
+            <option value="4">Games</option>
+            <option value="5">Music</option>
+            <option value="6">E-Books</option>
 </select>
 </td>
 </tr>
@@ -63,10 +61,13 @@
 
 <tr>
 <td colspan="2">
-<button type="button" onclick="uploadCheck()">Upload</button>
- <a href="dashboard.php" class="back-btn">
-            Back
-        </a>
+<button type="button" onclick="uploadCheck()" class="action-btn">
+    Upload
+</button>
+
+<a href="dashboard.php" class="action-btn back-btn">
+    Back
+</a>
 </td>
 </tr>
 

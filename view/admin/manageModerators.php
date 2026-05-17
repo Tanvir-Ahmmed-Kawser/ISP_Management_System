@@ -25,7 +25,7 @@ session_start();
         <div class="container">
             <div id="topDiv">
                 <h1>Manage Moderators</h1>
-                <input type="button" value="Add Moderator" class="btn" id="addModerator">
+                <input type="button" value="Add Moderator" class="btn" id="btnAddModerator">
             </div>
             <div>
                 <table border="1">
@@ -77,6 +77,7 @@ session_start();
     </div>
     <?php 
         include_once '../footer.php';
-    ?>
+    ?>    
+    <script src="../../asset/JS/admin.js"></script> 
 </body>
 </html>
