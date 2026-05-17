@@ -60,7 +60,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" id="btnUpload" name="upload" value="Upload Content" class="btn" onclick="">
+                        <input type="submit" id="btnUpload" name="upload" value="Add Content" class="btn" onclick="">
                     </td>
                 </tr>
             </table>

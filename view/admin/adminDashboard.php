@@ -4,6 +4,13 @@
         echo "Invalid request. Please login again";
         header('location: ../login.php');
     }
+    require_once('../../models/user.php');
+    require_once('../../models/content.php');
+    require_once('../../models/category.php');
+    $totalModerators = getTotalModerators();
+    $totalContents = getTotalContents();
+    $totalCategories = getTotalCategories();
+    $totalRequest = getTotalRequests();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +44,7 @@
                         <div class="icon">🎛️</div>
                         <h3>
                             Total Contents
-                            <p id="totalContent">00</p>
+                            <p id="totalContent"><?php echo $totalContents; ?></p>
                         </h3>
                         
                     </div>
@@ -47,7 +54,7 @@
                         <div class="icon">📁</div>
                         <h3>
                             Total Catagories
-                            <p id="totalCatagories">00</p>
+                            <p id="totalCatagories"><?php echo $totalCategories; ?></p>
                         </h3>
                     </div>
                 </div>
@@ -56,7 +63,7 @@
                         <div class="icon">👤</div>
                         <h3>
                             Total Moderators
-                            <p id="totalModerators">00</p>
+                            <p id="totalModerators"><?php echo $totalModerators; ?></p>
                         </h3>
                     </div>
                 </div>
@@ -65,7 +72,7 @@
                         <div class="icon">💬</div>
                         <h3>
                             Request Pending
-                            <p id="totalRequest">00</p>
+                            <p id="totalRequest"><?php echo $totalRequest; ?></p>
                         </h3>
                     </div>
                 </div>
