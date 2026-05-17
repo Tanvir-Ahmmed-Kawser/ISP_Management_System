@@ -27,8 +27,8 @@ $title = $_POST['title'];
 $description = $_POST['description'];
 $category_id = $_POST['category_id'];
 
-// no login required
-$user_id = 0;
+// use logged-in user if available
+$user_id = isset($_SESSION['user_id']) ? intval($_SESSION['user_id']) : 0;
 
 // STEP 4: file upload
 $file = $_FILES['content_file'];
@@ -50,6 +50,11 @@ $result = addContent($title, $description, $new_name, $category_id, $user_id);
 // STEP 6: response
 if ($result) {
     $_SESSION['success'] = "Content uploaded successfully";
+
+    // increment uploader's upload count when possible
+    if ($user_id > 0) {
+        incrementUserUploadCount($user_id);
+    }
 } else {
     $_SESSION['error'] = "Database insert failed";
 }
