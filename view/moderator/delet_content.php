@@ -1,6 +1,10 @@
 <?php
 session_start();
 require_once(__DIR__ . '/../../models/ContentModel.php');
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
 
 $contents = getAllContents();
 ?>

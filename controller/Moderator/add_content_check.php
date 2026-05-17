@@ -1,6 +1,9 @@
 <?php
-
 session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../../view/login.php');
+    }
 header('Content-Type: application/json');
 /*
 if(!isset($_SESSION['user_id'])){

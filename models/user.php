@@ -1,7 +1,7 @@
 <?php
     if(!isset($_SESSION['status'])){
         echo "Invalid request. Please login again";
-        header('location: ../login.php');
+        header('location: ../view/login.php');
     }
     require_once('database.php');
 

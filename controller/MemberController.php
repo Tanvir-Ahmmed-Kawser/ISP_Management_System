@@ -1,4 +1,8 @@
 <?php
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../view/login.php');
+    }
 
 include('../models/Request.php');
 

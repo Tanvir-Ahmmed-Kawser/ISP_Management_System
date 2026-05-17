@@ -1,5 +1,9 @@
 <?php
 session_start();
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../../view/login.php');
+    }
 require_once(__DIR__ . '/../../models/ContentModel.php');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['id'])) {
