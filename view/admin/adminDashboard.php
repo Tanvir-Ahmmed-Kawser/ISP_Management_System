@@ -121,27 +121,6 @@
                     </tr>
                 </table>
             </div>
-        
-            <div class="table">
-                <div class="tableHeader">
-                <h2>Recently Added Content</h2>
-                <input type="button" name="viewAll" id="btnViewAll" value="View All">        
-                </div>
-                <table border="1">
-                    <tr>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Uploader</th>
-                        <th>Downloads</th>
-                        <th>Uploaded At</th>
-                    </tr>
-                    <tr>
-                        <td colspan="5">
-                            This feature is comming soon.... Click on View All. Thank you!
-                        </td>
-                    </tr>
-                </table>
-            </div>
         </div>
     </div>   
     <script src="../../asset/JS/admin.js"></script> 
