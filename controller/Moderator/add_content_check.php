@@ -26,7 +26,7 @@ if(!in_array($ext,$allowed)){
     exit();
 }
 
-if($file['size'] > 10*1024*1024){
+if($file['size'] > 50*1024*1024){
     echo json_encode(["success"=>false,"message"=>"File too large"]);
     exit();
 }
