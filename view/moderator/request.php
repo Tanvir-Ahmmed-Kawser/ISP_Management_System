@@ -5,10 +5,7 @@ session_start();
         header('location: ../login.php');
     }
 
-/*
-If controller does not send $requests,
-initialize it as an empty array.
-*/
+
 if (!isset($requests) || !is_array($requests)) {
     $requests = array();
 }
@@ -32,7 +29,7 @@ if (!isset($requests) || !is_array($requests)) {
                 <th>Category</th>
                 <th>Message</th>
                 <th>Status</th>
-                <th>Update</th>
+                <th>Update Request </th>
             </tr>
 
             <?php if (!empty($requests)) { ?>

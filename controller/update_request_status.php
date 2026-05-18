@@ -1,24 +1,23 @@
 <?php
 session_start();
-    if(!isset($_SESSION['status'])){
-        echo "Invalid request. Please login again";
-        header('location: ../view/login.php');
-    }
-
+if(!isset($_SESSION['status'])){
+    echo json_encode(['success' => false, 'message' => 'Invalid request. Please login again']);
+    exit;
+}
+//check update request status
 require_once(__DIR__ . '/../../models/RequestModel.php');
+header('Content-Type: application/json');
 
 if (isset($_POST['id']) && isset($_POST['status'])) {
+    $id = intval($_POST['id']);
+    $status = trim($_POST['status']);
 
-    $id = $_POST['id'];
-    $status = $_POST['status'];
-
-    if (updateRequestStatus($id, $status)) {
-        echo "success";
+    if ($id > 0 && updateRequestStatus($id, $status)) {
+        echo json_encode(['success' => true, 'message' => 'Status updated successfully']);
     } else {
-        echo "failed";
+        echo json_encode(['success' => false, 'message' => 'Failed to update status']);
     }
-
 } else {
-    echo "invalid";
+    echo json_encode(['success' => false, 'message' => 'Invalid request data']);
 }
 ?>

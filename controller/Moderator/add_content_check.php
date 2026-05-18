@@ -19,14 +19,23 @@ if(!isset($_FILES['content_file'])){
 $file = $_FILES['content_file'];
 
 $ext = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-$allowed = ["mp4","pdf","zip","exe","jpg","png","jpeg"];
+$allowed = [ "mp4",
+    "pdf",
+    "zip",
+    "exe",
+    "jpg",
+    "png",
+    "doc",
+    "docx",
+    "xls",
+    "xlsx"];
 
 if(!in_array($ext,$allowed)){
     echo json_encode(["success"=>false,"message"=>"Invalid file type"]);
     exit();
 }
 
-if($file['size'] > 10*1024*1024){
+if($file['size'] > 50*1024*1024){
     echo json_encode(["success"=>false,"message"=>"File too large"]);
     exit();
 }
