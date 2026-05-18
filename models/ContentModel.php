@@ -16,11 +16,7 @@ function addContent($title, $desc, $file, $cat, $user) {
     return mysqli_query($conn, $sql);
 }
 
-/*
- * VIEW ALL CONTENTS
- * This version does NOT use categories or users tables.
- * It works even if only the contents table exists.
- */
+
 function getAllContents($search = '', $category = '') {
     $conn = getConnection();
 

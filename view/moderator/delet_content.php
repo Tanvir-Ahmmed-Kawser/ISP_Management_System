@@ -66,7 +66,7 @@ $contents = getAllContents();
                                    value="<?php echo $row['id']; ?>">
 
                             <button type="submit" class="delete-btn">
-                                Delete
+                                Delete Content
                             </button>
                         </form>
                     </td>
