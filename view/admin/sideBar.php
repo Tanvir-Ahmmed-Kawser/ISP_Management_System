@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../login.php');
+    }
+?>
 <style>
     .sidebar{
     width: 300px;
@@ -13,24 +19,16 @@
 .menu{
     list-style: none;
 }
-
 .menu li{
     padding: 16px 18px;
     margin-bottom: 15px;
     border-radius: 14px;
-    cursor: pointer;
     font-size: 18px;
     display: flex;
     align-items: center;
     gap: 12px;
     transition: 0.3s;
 }
-
-.menu li:hover{
-    background: #4b63f3;
-    color: white;
-}
-
 .menu .active{
     background: #4b63f3;
     color: white;
@@ -43,27 +41,28 @@
     <ul class="menu">
         <li id="dashboard" class="list">
             <span>📊</span>
-                Dashboard
+            <a href="adminDashboard.php">Dashboard</a>
         </li>
         <li id="manageModerator">
             <span>👥</span>
-            Manage Moderators
+            <a href="manageModerators.php">Manage Moderators</a>
         </li>
         <li id="manageContent">
             <span>🎛️</span>
-            Manage Contents
+            <a href="manageContents.php">Manage Contents</a>
         </li>
-        <li id="uploadContent">
+        <li id="addContent">
             <span>⬆️</span>
-            Upload Content
+            <a href="addContent.php">Upload Content</a>
         </li>
-        <li>
+        <li id="viewRequest">
             <span>📬</span>
-            Content Request
+            <a href="#">View Request</a>
         </li>
         <li id="logOut">
             <span>⛔</span>
-            Log Out
+            <a href="../../controller/logout.php">Log Out</a>
         </li>
     </ul>
 </div>
+<script src="../../asset/JS/sideBar.js"></script>

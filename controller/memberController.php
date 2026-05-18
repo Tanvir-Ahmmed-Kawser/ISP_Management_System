@@ -1,12 +1,31 @@
 <?php
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../view/login.php');
+    }
+
 include('../models/Request.php');
 
-$title=$_POST['title'];
-$category=$_POST['category'];
-$message=$_POST['message'];
-$ip=$_POST['ip'];
+if(isset($_POST['submit'])){
 
-addRequest($title,$category,$message,$ip);
+    $title = trim($_POST['title']);
+    $category = trim($_POST['category']);
+    $message = trim($_POST['message']);
 
-header("location: ../views/request.php");
+    if($title == "" || $category == ""){
+
+        echo "Required fields missing!";
+        exit;
+    }
+
+    $result = addRequest($title, $category, $message);
+
+    if($result){
+        header("Location: ../views/member.php");
+    }
+    else{
+        echo "Insert Failed";
+    }
+
+}
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/database.php';
 
 function task4GetChildCategoryIds($category_id){
     $con = getConnection();
@@ -19,6 +19,7 @@ function task4GetChildCategoryIds($category_id){
     return $ids;
 }
 
+// Task 4 - 23-53221-3: recent/most-downloaded content for the member home section
 function task4GetHighlightedContents(){
     $con = getConnection();
     $sql = "select c.id, c.title, c.description, c.file_path, c.download_count, c.uploaded_at,
@@ -31,6 +32,7 @@ function task4GetHighlightedContents(){
     return mysqli_query($con, $sql);
 }
 
+// Task 4 - 23-53221-3: AJAX search + category/sub-category/file-type filtering
 function task4SearchContents($q, $category_id, $subcategory_id, $file_type){
     $con = getConnection();
 
@@ -94,6 +96,7 @@ function task4SearchContents($q, $category_id, $subcategory_id, $file_type){
     return mysqli_stmt_get_result($stmt);
 }
 
+// Task 4 - 23-53221-3: read one content record before download
 function task4GetContentById($content_id){
     $con = getConnection();
     $content_id = (int)$content_id;
@@ -106,6 +109,7 @@ function task4GetContentById($content_id){
     return mysqli_fetch_assoc($result);
 }
 
+// Task 4 - 23-53221-3: optional download count increment
 function task4IncrementDownloadCount($content_id){
     $con = getConnection();
     $content_id = (int)$content_id;

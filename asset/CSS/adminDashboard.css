@@ -13,7 +13,6 @@ body{
     display: flex;
     gap: 20px;
 }
-
 .mainContent{
     flex: 1;
 }
@@ -23,6 +22,8 @@ body{
     padding: 28px;
     border-radius: 18px;
     margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
 }
 .welcomeBox h1{
     font-size: 40px;
@@ -30,6 +31,15 @@ body{
 }
 .welcomeBox p{
     font-size: 18px;
+}
+.welcomeBox input{
+    background: magenta;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 18px;
+    
 }
 .sateContainer{
     display: grid;
@@ -131,17 +141,19 @@ body{
 table{
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid black;
 }
 th{
-    background: black;
+    background: #2ebdda;
     color: white;
     padding: 16px;
     text-align: left;
+    border: 1px ;
 }
 td{
     padding: 20px;
     text-align: center;
-    color: gray;
+    border: 1px;
 }
 
 @media(max-width: 1000px){

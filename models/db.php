@@ -1,15 +1,14 @@
 <?php
 
-    $host = "127.0.0.1";
-    $dbuser = "root";
-    $dbpassword = "";
-    $dbname = "projectdb";
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "projectdb";
 
-    function getConnection(){
-        global $host;
-        global $dbuser;
-        $con = mysqli_connect($host, $dbuser, $GLOBALS['dbpassword'], $GLOBALS['dbname']);
-        return $con; 
-    }
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+if($conn->connect_error){
+    die("Connection Failed");
+}
 
 ?>

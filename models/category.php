@@ -1,8 +1,24 @@
 <?php
-include('db.php');
-
-function getCategories(){
+    if(!isset($_SESSION['status'])){
+        echo "Invalid request. Please login again";
+        header('location: ../view/login.php');
+    }
+    require_once('database.php');
+    function getAllCategory(){
+        $con = getConnection();
+        $sql = "select * from categories";
+        $result = mysqli_query($con, $sql);
+        $categories = [];
+        while($row = mysqli_fetch_assoc($result)){
+            array_push($categories, $row);
+        }
+        return $categories;
+    }
+    function getTotalCategories(){
     $con = getConnection();
-    return mysqli_query($con,"SELECT * FROM categories");
+    $sql = "select count(*) as total from categories";
+    $result = mysqli_query($con, $sql);
+    $data = mysqli_fetch_assoc($result);
+    return $data['total'];
 }
 ?>

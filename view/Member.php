@@ -10,8 +10,13 @@ $requestCategories = task4GetAllCategories();
 $highlightedContents = task4GetHighlightedContents();
 $allContents = task4SearchContents('', 0, 0, '');
 
-include __DIR__ . '/header.php';
+//include __DIR__ . '/header.php';
 ?>
+<html>
+    <head>
+        <link rel="stylesheet" href="../asset/home.css">
+    </head>
+</html>
 
 <main class="container">
     <section class="hero-section">

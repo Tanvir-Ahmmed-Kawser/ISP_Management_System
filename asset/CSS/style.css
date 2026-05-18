@@ -1,39 +1,52 @@
 body{
     font-family: Arial;
-    background: #f5f5f5;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
 }
 
-h2{
-    color: #333;
-}
-
-table{
-    border-collapse: collapse;
+.container{
     width: 80%;
-    background: white;
+    margin: auto;
+    padding: 20px;
 }
 
-table th, table td{
+form{
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input, select{
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
+    margin-top: 10px;
 }
 
 button{
-    padding: 8px 12px;
-    background: #007bff;
+    padding: 10px 20px;
+    background: blue;
     color: white;
     border: none;
-    cursor: pointer;
+    margin-top: 10px;
 }
 
-button:hover{
-    background: #0056b3;
+nav{
+    background: black;
+    padding: 15px;
 }
 
-input, select, textarea{
-    padding: 8px;
-    width: 250px;
-    margin: 5px 0;
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.card{
+    background: white;
+    padding: 15px;
+    margin-top: 15px;
+}
+body {
+    background-color: #f5f5f5;
 }

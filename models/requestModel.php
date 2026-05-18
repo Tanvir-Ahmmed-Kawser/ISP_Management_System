@@ -5,6 +5,7 @@ function task4CleanInput($value){
     return trim((string)$value);
 }
 
+// Task 4 - 23-53221-3: create content request from an unregistered member
 function task4AddContentRequest($content_title, $category_requested, $message, $requester_ip){
     $con = getConnection();
 
@@ -25,6 +26,7 @@ function task4AddContentRequest($content_title, $category_requested, $message, $
     return mysqli_stmt_execute($stmt);
 }
 
+// Task 4 - 23-53221-3: admin/moderator read request list
 function task4GetAllContentRequests(){
     $con = getConnection();
     $sql = "select id, requester_ip, content_title, category_requested, message, status, created_at
@@ -33,6 +35,7 @@ function task4GetAllContentRequests(){
     return mysqli_query($con, $sql);
 }
 
+// Task 4 - 23-53221-3: admin/moderator update request status
 function task4UpdateContentRequestStatus($request_id, $status){
     $con = getConnection();
 

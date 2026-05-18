@@ -1,4 +1,3 @@
 <?php
-header('Location: views/member.php');
-exit;
+    header("Location: view/home.php");
 ?>
