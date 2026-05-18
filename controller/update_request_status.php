@@ -4,7 +4,7 @@ if(!isset($_SESSION['status'])){
     echo json_encode(['success' => false, 'message' => 'Invalid request. Please login again']);
     exit;
 }
-
+//check update request status
 require_once(__DIR__ . '/../../models/RequestModel.php');
 header('Content-Type: application/json');
 
