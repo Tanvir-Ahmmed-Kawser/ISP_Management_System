@@ -45,8 +45,7 @@
                         <h3>
                             Total Contents
                             <p id="totalContent"><?php echo $totalContents; ?></p>
-                        </h3>
-                        
+                        </h3>                        
                     </div>
                 </div>
                 <div class="stateBox">
@@ -102,8 +101,7 @@
                     </p>
                     <input type="button" name="btnUpload" value="Upload Now" id="btnUpload">
                 </div>
-            </div>
-        
+            </div>        
             <div class="table">
                 <div class="tableHeader">
                 <h2>Recently Added Content</h2>
