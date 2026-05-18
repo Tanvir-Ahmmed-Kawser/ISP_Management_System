@@ -50,7 +50,7 @@ $contents = getAllContents();
 
         <?php if (!empty($contents)): ?>
             <?php foreach ($contents as $index => $row): ?>
-                <tr>
+                <tr id="content-row-<?php echo $row['id']; ?>">
                     <td><?php echo $index + 1; ?></td>
                     <td><?php echo htmlspecialchars($row['title']); ?></td>
                     <td><?php echo htmlspecialchars($row['category_name']); ?></td>
@@ -59,7 +59,7 @@ $contents = getAllContents();
                     <td>
                         <form method="POST"
                               action="../../controller/Moderator/delete_content_check.php"
-                              onsubmit="return confirm('Are you sure you want to delete this content?');">
+                              class="delete-form">
 
                             <input type="hidden"
                                    name="id"
