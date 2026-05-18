@@ -6,6 +6,7 @@ if(!isset($_SESSION['status'])){
     header('location: ../../view/login.php');
 }
 require_once(__DIR__ . '/../../models/ContentModel.php');
+
 //check if ajax request
 $isAjax = isset($_POST['ajax']) && $_POST['ajax'] === '1';
 
@@ -19,10 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['id'])) {
     }
     exit;
 }
-//validate id
+
 $id = intval($_POST['id']);
 if ($id <= 0) {
-//invalid id
 if ($isAjax) {
         header('Content-Type: application/json');
         echo json_encode(['success' => false, 'message' => 'Invalid content ID.']);
