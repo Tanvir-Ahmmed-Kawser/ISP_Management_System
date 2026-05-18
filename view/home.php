@@ -38,7 +38,7 @@ while($row = $result->fetch_assoc()){
 <?php
 }
 
-require_once 'Member.php';
+require_once 'member.php';
 ?>
 
 <?php include_once 'footer.php'; ?>
