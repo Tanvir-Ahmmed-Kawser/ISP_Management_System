@@ -1,5 +1,5 @@
 function uploadCheck(){
-
+//upload check using ajax
     let form = document.getElementById("contentForm");
     let data = new FormData(form);
 
@@ -29,7 +29,7 @@ function uploadCheck(){
 
     xhr.send(data);
 }
-
+//function to update request status using ajax 
 function updateStatus(id, status){
     let xhr = new XMLHttpRequest();
     xhr.open('POST', '../../controller/update_request_status.php', true);
@@ -61,7 +61,7 @@ function updateStatus(id, status){
 
     xhr.send('id=' + encodeURIComponent(id) + '&status=' + encodeURIComponent(status));
 }
-
+//init ajax for delet content
 function initModeratorAjax(){
     let deleteForms = document.querySelectorAll('.delete-form');
     deleteForms.forEach(function(form){
